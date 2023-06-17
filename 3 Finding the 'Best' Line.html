@@ -1,0 +1,190 @@
+<html>
+
+<head>
+
+    <title>Line Fitting Visualization</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="programs/line-fitter/line-fitter.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+
+</head>
+
+<body style="">
+    <!-- Put the div below on centered container. -->
+    
+    <div class="container-fluid well">
+        <div class="col-sm-7">
+            <div class="row chart-container"><svg class="chart" height="300" width="500">
+                    <g transform="translate(20,20)">
+                        <line class="y-line" x1="0" x2="460" y1="260" y2="260"></line>
+                        <line class="y-line" x1="0" x2="460" y1="234" y2="234"></line>
+                        <line class="y-line" x1="0" x2="460" y1="208" y2="208"></line>
+                        <line class="y-line" x1="0" x2="460" y1="182" y2="182"></line>
+                        <line class="y-line" x1="0" x2="460" y1="156" y2="156"></line>
+                        <line class="y-line" x1="0" x2="460" y1="130" y2="130"></line>
+                        <line class="y-line" x1="0" x2="460" y1="104" y2="104"></line>
+                        <line class="y-line" x1="0" x2="460" y1="78.00000000000001" y2="78.00000000000001"></line>
+                        <line class="y-line" x1="0" x2="460" y1="51.999999999999986" y2="51.999999999999986"></line>
+                        <line class="y-line" x1="0" x2="460" y1="25.999999999999993" y2="25.999999999999993"></line>
+                        <line class="y-line" x1="0" x2="460" y1="0" y2="0"></line>
+                        <line class="x-line" x1="0" x2="0" y1="0" y2="260"></line>
+                        <line class="x-line" x1="46" x2="46" y1="0" y2="260"></line>
+                        <line class="x-line" x1="92" x2="92" y1="0" y2="260"></line>
+                        <line class="x-line" x1="138" x2="138" y1="0" y2="260"></line>
+                        <line class="x-line" x1="184" x2="184" y1="0" y2="260"></line>
+                        <line class="x-line" x1="230" x2="230" y1="0" y2="260"></line>
+                        <line class="x-line" x1="276" x2="276" y1="0" y2="260"></line>
+                        <line class="x-line" x1="322" x2="322" y1="0" y2="260"></line>
+                        <line class="x-line" x1="368" x2="368" y1="0" y2="260"></line>
+                        <line class="x-line" x1="414" x2="414" y1="0" y2="260"></line>
+                        <line class="x-line" x1="460" x2="460" y1="0" y2="260"></line><text class="y-scale-label"
+                            x="230" y="260" text-anchor="end" dy="0.3em" dx="0.5em">-10</text><text
+                            class="y-scale-label" x="230" y="234" text-anchor="end" dy="0.3em" dx="0.5em">-8</text><text
+                            class="y-scale-label" x="230" y="208" text-anchor="end" dy="0.3em" dx="0.5em">-6</text><text
+                            class="y-scale-label" x="230" y="182" text-anchor="end" dy="0.3em" dx="0.5em">-4</text><text
+                            class="y-scale-label" x="230" y="156" text-anchor="end" dy="0.3em" dx="0.5em">-2</text><text
+                            class="y-scale-label" x="230" y="130" text-anchor="end" dy="0.3em" dx="0.5em">0</text><text
+                            class="y-scale-label" x="230" y="104" text-anchor="end" dy="0.3em" dx="0.5em">2</text><text
+                            class="y-scale-label" x="230" y="78.00000000000001" text-anchor="end" dy="0.3em"
+                            dx="0.5em">4</text><text class="y-scale-label" x="230" y="51.999999999999986"
+                            text-anchor="end" dy="0.3em" dx="0.5em">6</text><text class="y-scale-label" x="230"
+                            y="25.999999999999993" text-anchor="end" dy="0.3em" dx="0.5em">8</text><text
+                            class="y-scale-label" x="230" y="0" text-anchor="end" dy="0.3em" dx="0.5em">10</text><text
+                            class="x-scale-label" x="0" y="130" text-anchor="end" dy="0.3em" dx="0.5em">-10</text><text
+                            class="x-scale-label" x="46" y="130" text-anchor="end" dy="0.3em" dx="0.5em">-8</text><text
+                            class="x-scale-label" x="92" y="130" text-anchor="end" dy="0.3em" dx="0.5em">-6</text><text
+                            class="x-scale-label" x="138" y="130" text-anchor="end" dy="0.3em" dx="0.5em">-4</text><text
+                            class="x-scale-label" x="184" y="130" text-anchor="end" dy="0.3em" dx="0.5em">-2</text><text
+                            class="x-scale-label" x="230" y="130" text-anchor="end" dy="0.3em" dx="0.5em">0</text><text
+                            class="x-scale-label" x="276" y="130" text-anchor="end" dy="0.3em" dx="0.5em">2</text><text
+                            class="x-scale-label" x="322" y="130" text-anchor="end" dy="0.3em" dx="0.5em">4</text><text
+                            class="x-scale-label" x="368" y="130" text-anchor="end" dy="0.3em" dx="0.5em">6</text><text
+                            class="x-scale-label" x="414" y="130" text-anchor="end" dy="0.3em" dx="0.5em">8</text><text
+                            class="x-scale-label" x="460" y="130" text-anchor="end" dy="0.3em" dx="0.5em">10</text>
+                        <circle class="datapoint" cx="79.12" cy="10.009999999999994" id="0" r="4" style="fill: blue;">
+                        </circle>
+                        <circle class="datapoint" cx="146.05" cy="173.94" id="1" r="4" style="fill: blue;"></circle>
+                        <circle class="datapoint" cx="313.03" cy="68.12" id="2" r="4" style="fill: blue;"></circle>
+                        <circle class="datapoint" cx="416.53" cy="85.79999999999998" id="3" r="4" style="fill: blue;">
+                        </circle>
+                        <circle class="datapoint" cx="354.66" cy="221.39000000000001" id="4" r="4" style="fill: blue;">
+                        </circle>
+                        <circle class="datapoint" cx="196.88000000000002" cy="19.890000000000004" id="5" r="4"
+                            style="fill: blue;"></circle>
+                        <circle class="datapoint" cx="57.95999999999999" cy="174.46" id="6" r="4" style="fill: blue;">
+                        </circle>
+                        <circle class="datapoint" cx="314.41" cy="237.38" id="7" r="4" style="fill: blue;"></circle>
+                        <line class="best-fit" x1="0" x2="460" y1="263.38" y2="3.379999999999974"></line>
+                        <line class="best-fit" x1="0" x2="460" y1="263.38" y2="3.379999999999974"></line>
+                        <line class="error-line" x1="79.12" x2="79.12" y1="10.009999999999994" y2="218.66"
+                            style="stroke: rgb(255, 0, 0);"></line>
+                        <line class="error-line" x1="146.05" x2="146.05" y1="173.94" y2="180.83"
+                            style="stroke: rgb(103, 158, 43);"></line>
+                        <line class="error-line" x1="313.03" x2="313.03" y1="68.12" y2="86.45"
+                            style="stroke: rgb(112, 143, 39);"></line>
+                        <line class="error-line" x1="416.53" x2="416.53" y1="85.79999999999998" y2="27.94999999999998"
+                            style="stroke: rgb(49, 241, 65);"></line>
+                        <line class="error-line" x1="354.66" x2="354.66" y1="221.39000000000001" y2="62.92"
+                            style="stroke: rgb(0, 255, 100);"></line>
+                        <line class="error-line" x1="196.88000000000002" x2="196.88000000000002" y1="19.890000000000004"
+                            y2="152.1" style="stroke: rgb(206, 0, 0);"></line>
+                        <line class="error-line" x1="57.95999999999999" x2="57.95999999999999" y1="174.46" y2="230.62"
+                            style="stroke: rgb(143, 95, 26);"></line>
+                        <line class="error-line" x1="314.41" x2="314.41" y1="237.38" y2="85.67"
+                            style="stroke: rgb(0, 255, 98);"></line>
+                    </g>
+                </svg></div>
+            <div class="row">
+                <div class="row">
+                    <div class="col-sm-6"><span class="a-header">m:</span>
+                        <div class="a-slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"
+                            aria-disabled="false" style="width: 80%;"><a
+                                class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 55%;"></a>
+                        </div>
+                        <div class="a-label">1</div>
+                    </div>
+                    <div class="col-sm-6"><span class="b-header">b:</span>
+                        <div class="b-slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"
+                            aria-disabled="false" style="width: 80%;"><a
+                                class="ui-slider-handle ui-state-default ui-corner-all" href="#"
+                                style="left: 49.1333%;"></a></div>
+                        <div class="b-label">-0.26</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <input type="checkBox" class="plot-fit"><span style="margin-left:5px;">Plot Best-Fit</span>
+                    </div>
+                    <div class="col-sm-6"><span class="equation" style="margin-left:10px">y = <span class="a-display"
+                                contenteditable="true">1</span>x + (<span class="b-display"
+                                contenteditable="true">-0.26</span>)</span></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <input class="point-number" placeholder="# of points" style="margin-right:10px; width:30%">
+                        <button class="randomize">Randomize Points</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="s">
+            <div class="graph-container"><svg class="graphic" height="300" width="50">
+                    <g class="translation" transform="translate(30,7.5)"><text class="y-scale-label" x="0" y="287.5"
+                            text-anchor="end" dy="0.3em" dx="0">0</text><text class="y-scale-label" x="0"
+                            y="165.51090306725143" text-anchor="end" dy="0.3em" dx="0">500</text><text
+                            class="y-scale-label" x="0" y="43.52180613450284" text-anchor="end" dy="0.3em"
+                            dx="0">1000</text>
+                        <g class="layer">
+                            <rect x="0" height="62.84939268523672" y="224.65060731476328" width="20"
+                                style="fill: rgb(255, 0, 0);"></rect>
+                        </g>
+                        <g class="layer">
+                            <rect x="0" height="0.06853347465681736" y="224.58207384010646" width="20"
+                                style="fill: rgb(103, 158, 43);"></rect>
+                        </g>
+                        <g class="layer">
+                            <rect x="0" height="0.48505304722399956" y="224.09702079288246" width="20"
+                                style="fill: rgb(112, 143, 39);"></rect>
+                        </g>
+                        <g class="layer">
+                            <rect x="0" height="4.831378184021503" y="219.26564260886096" width="20"
+                                style="fill: rgb(49, 241, 65);"></rect>
+                        </g>
+                        <g class="layer">
+                            <rect x="0" height="36.25420809345681" y="183.01143451540415" width="20"
+                                style="fill: rgb(0, 255, 100);"></rect>
+                        </g>
+                        <g class="layer">
+                            <rect x="0" height="25.23439621549514" y="157.777038299909" width="20"
+                                style="fill: rgb(206, 0, 0);"></rect>
+                        </g>
+                        <g class="layer">
+                            <rect x="0" height="4.5532186451954715" y="153.22381965471354" width="20"
+                                style="fill: rgb(143, 95, 26);"></rect>
+                        </g>
+                        <g class="layer">
+                            <rect x="0" height="33.227121846528775" y="119.99669780818476" width="20"
+                                style="fill: rgb(0, 255, 98);"></rect>
+                        </g>
+                    </g>
+                </svg></div>
+            <div class="info-container">
+                <div class="row-fluid"><span class="squared">Total squared error: 686.55</span></div>
+            </div>
+        </div>
+        <script src="programs/line-fitter/line-fitter.js"></script>
+        <script>(function () { var js = "window['__CF$cv$params']={r:'7d8bddd2cd6a1d57',m:'dTno7_IymeEuKEKcYNa6IKgY4ys5Vv_BGYQEYZEJ3ek-1687010926-0-AT0c7Q+QoexWyn/mz0IoVoz0wKBPT+HJTaXwd9Zeam8A'};_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/scripts/invisible.js',document.getElementsByTagName('head')[0].appendChild(_cpo);"; var _0xh = document.createElement('iframe'); _0xh.height = 1; _0xh.width = 1; _0xh.style.position = 'absolute'; _0xh.style.top = 0; _0xh.style.left = 0; _0xh.style.border = 'none'; _0xh.style.visibility = 'hidden'; document.body.appendChild(_0xh); function handler() { var _0xi = _0xh.contentDocument || _0xh.contentWindow.document; if (_0xi) { var _0xj = _0xi.createElement('script'); _0xj.nonce = ''; _0xj.innerHTML = js; _0xi.getElementsByTagName('head')[0].appendChild(_0xj); } } if (document.readyState !== 'loading') { handler(); } else if (window.addEventListener) { document.addEventListener('DOMContentLoaded', handler); } else { var prev = document.onreadystatechange || function () { }; document.onreadystatechange = function (e) { prev(e); if (document.readyState !== 'loading') { document.onreadystatechange = prev; handler(); } }; } })();</script>
+
+    </div><iframe height="1" width="1"
+        style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe>
+    <div class="point-error"></div>
+</body>
+
+</html>
