@@ -1,9 +1,10 @@
 import random
-from simulate import simulate
+from simulate import simulate, my_simulation
 
  #Change this number (keep it smaller than 100 to save processing power)
 num_people_in_room = random.randint(2,100)
 
+my_simulation(num_people_in_room)
 simulate(num_people_in_room)
 
 # The output should look like this:
