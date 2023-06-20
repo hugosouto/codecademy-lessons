@@ -1,7 +1,8 @@
+import random
 from simulate import simulate
 
  #Change this number (keep it smaller than 100 to save processing power)
-num_people_in_room = 2
+num_people_in_room = random.randint(2,100)
 
 simulate(num_people_in_room)
 

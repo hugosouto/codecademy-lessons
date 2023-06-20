@@ -18,12 +18,12 @@ def simulate(num_people):
     for i in range(0, num_people):
         print(f"Person {i+1}'s birthday: {get_date()}")
     
-    prob = round(num_people / 365**(num_people-1), ndigits=10)
+    prob = round(100*(num_people / 365**(num_people-1)), 2)
 
-    print(f"\nThe probability that two people in a room of {num_people} people have the same birthday is nearly {prob}%")
-          
+    print(f"\nThe probability that two people in a room of {num_people} people have the same birthday is nearly {prob:.0%}")
+        
     return
 
-num_people_in_room = random.randint(2,11)
-
+# For testing:
+num_people_in_room = random.randint(2,2)
 simulate(num_people_in_room)
