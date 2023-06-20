@@ -25,5 +25,5 @@ def simulate(num_people):
     return
 
 # For testing:
-num_people_in_room = random.randint(2,2)
-simulate(num_people_in_room)
+# num_people_in_room = random.randint(2,2)
+# simulate(num_people_in_room)
