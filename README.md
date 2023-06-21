@@ -1,5 +1,5 @@
 # Codecademy Lessons Repository
-This repository is a collection of code files that originate from the lessons of various courses on Codecademy. It serves as a reference, a learning aid, and a platform for discussing and improving upon the lessons taught.
+This repository is a collection of code files that originate from the lessons of various courses on [Codecademy](https://www.codecademy.com/). It serves as a reference, a learning aid, and a platform for discussing and improving upon the lessons taught. All rights to the programas in HTML belong to Codecademy.
 
 ## 🗂️ Content
 The repository is divided into directories, each named after a particular course on Codecademy. Inside each directory, you'll find code files corresponding to the lessons taught in each course. The files are named logically according to the lesson topics.
